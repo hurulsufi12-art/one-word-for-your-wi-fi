@@ -5,6 +5,8 @@ Stdlib only, deterministic.
 """
 import os
 
+MAX_CHARS = 20  # sealed scorer gate (RULES.txt): 1-20 characters.
+
 TEXT = "Ghosting"
 
 
@@ -15,7 +17,7 @@ def check_gate(text):
     """
     if not isinstance(text, str):
         return False
-    if not 1 <= len(text) <= 20:
+    if not 1 <= len(text) <= MAX_CHARS:
         return False
     if not text.strip():
         return False
